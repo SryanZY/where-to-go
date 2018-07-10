@@ -1,7 +1,6 @@
 <template>
     <div>
         <div :class="$style.home">Home</div>
-        <router-link :to="{ name: 'List' }">列表页</router-link>
     </div>
 </template>
 
