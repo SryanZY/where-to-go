@@ -1,16 +1,19 @@
 <template>
     <div>
-        <div :class="$style.home">Home</div>
+        <Header></Header>
     </div>
 </template>
 
 <script>
+import Header from './components/header'
 export default {
     name: 'Home',
     data () {
         return {}
     },
-    components: {}
+    components: {
+        Header
+    }
 
 }
 
