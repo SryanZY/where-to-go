@@ -2,12 +2,14 @@
     <div>
         <Header></Header>
         <Swiper></Swiper>
+        <Icon></Icon>
     </div>
 </template>
 
 <script>
 import Header from './components/header'
 import Swiper from './components/swiper'
+import Icon from './components/icons'
 export default {
     name: 'Home',
     data () {
@@ -15,7 +17,8 @@ export default {
     },
     components: {
         Header,
-        Swiper
+        Swiper,
+        Icon
     }
 
 }
