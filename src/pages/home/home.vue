@@ -3,6 +3,7 @@
         <Header></Header>
         <Swiper></Swiper>
         <Icon></Icon>
+        <Recommend></Recommend>
     </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Header from './components/header'
 import Swiper from './components/swiper'
 import Icon from './components/icons'
+import Recommend from './components/recommend'
 export default {
     name: 'Home',
     data () {
@@ -18,15 +20,12 @@ export default {
     components: {
         Header,
         Swiper,
-        Icon
+        Icon,
+        Recommend
     }
 
 }
 
 </script>
 <style module>
-    .home {
-        font-size: 20px;
-        color: #38f;
-    }
 </style>

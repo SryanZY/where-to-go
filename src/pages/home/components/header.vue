@@ -27,30 +27,30 @@ export default {
     @import '~styles/varibles.styl'
     .header
         display flex
-        line-height .86rem
+        line-height 86px
         background $bgColor
         color #fff
         .headerLeft
             float left
-            width .64rem
+            width 64px
             i
                 display block
                 text-align center
-                font-size .2rem
+                font-size 20px
         .headerInput
             flex 1
-            margin-top .12rem
-            margin-left .2rem
-            padding-left .2rem
-            height .64rem
-            line-height .64rem
+            margin-top 12px
+            margin-left 20px
+            padding-left 20px
+            height 64px
+            line-height 64px
             background #fff
-            border-radius .1rem
+            border-radius 10px
             color #ccc
         .headerRight
             float right
-            width 1.24rem
+            width 124px
             text-align center
             i
-                font-size .24rem
+                font-size 24px
 </style>

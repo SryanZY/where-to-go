@@ -112,16 +112,16 @@ export default {
         flex-wrap wrap
     .icon
         .iconImg
-            width 1.875rem
-            height 1.52rem
-            margin-bottom .6rem
+            width 186px
+            height 186px
+            margin-bottom 60px
             text-align center
             img
-                width 1.1rem
-                height 1.1rem
+                width 110px
+                height 110px
             p
-                margin-top .2rem
-                font-size .13rem
+                margin-top 20px
+                font-size 12px
                 color $darkTextColor
                 ellipsis()
 </style>

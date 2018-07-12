@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'lib-flexible/flexible'
 import App from './App'
 import router from './router'
 import FastClick from 'fastclick'
