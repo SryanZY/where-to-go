@@ -64,7 +64,7 @@ export default {
     @import '~styles/varibles.styl'
     .recommendTitle
         margin-top 40px
-        margin-bottom 40px
+        margin-bottom 30px
         line-height 80px
         background #eee
         text-indent 40px

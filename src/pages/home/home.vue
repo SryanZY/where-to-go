@@ -4,6 +4,7 @@
         <Swiper></Swiper>
         <Icon></Icon>
         <Recommend></Recommend>
+        <Weekend></Weekend>
     </div>
 </template>
 
@@ -12,6 +13,7 @@ import Header from './components/header'
 import Swiper from './components/swiper'
 import Icon from './components/icons'
 import Recommend from './components/recommend'
+import Weekend from './components/weekend'
 export default {
     name: 'Home',
     data () {
@@ -21,7 +23,8 @@ export default {
         Header,
         Swiper,
         Icon,
-        Recommend
+        Recommend,
+        Weekend
     }
 
 }
