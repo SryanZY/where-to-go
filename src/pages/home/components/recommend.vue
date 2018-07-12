@@ -19,52 +19,22 @@
 
 <script>
 export default {
-    data () {
-        return {
-            recommendList: [
-                {
-                    id: '0001',
-                    url: 'http://img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_200x200_36727f69.jpg',
-                    title: '金海湖风景区',
-                    desc: '1912条评论'
-                },
-                {
-                    id: '0002',
-                    url: 'http://img1.qunarzz.com/sight/p0/1602/f9/f9095e245afd18fb90.water.jpg_200x200_f0644cd1.jpg',
-                    title: '中央电视塔',
-                    desc: '3202条评论'
-                },
-                {
-                    id: '0003',
-                    url: 'http://img1.qunarzz.com/sight/p0/1803/7b/7b023b9728f0834fa3.img.jpg_200x200_5fddc1d8.jpg',
-                    title: '世界花卉大观园',
-                    desc: '4474条评论'
-                },
-                {
-                    id: '0004',
-                    url: 'http://img1.qunarzz.com/sight/p0/1801/56/568ebf34301216dfa3.img.jpg_200x200_09bfb2ac.jpg',
-                    title: '北京活的3D博物馆',
-                    desc: '828条评论'
-                },
-                {
-                    id: '0005',
-                    url: 'http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_200x200_2458ffb2.jpg',
-                    title: '八达岭长城',
-                    desc: '32800条评论'
-                }
-            ]
+    props: {
+        recommendList: {
+            type: Array,
+            default () {
+                return []
+            }
         }
-    },
-    components: {}
-
+    }
 }
 
 </script>
 <style lang='stylus' module>
     @import '~styles/varibles.styl'
     .recommendTitle
-        margin-top 40px
-        margin-bottom 30px
+        margin-top 20px
+        margin-bottom 20px
         line-height 80px
         background #eee
         text-indent 40px

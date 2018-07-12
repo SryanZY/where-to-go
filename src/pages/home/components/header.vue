@@ -7,7 +7,7 @@
             <i class="iconfont">&#xe632;</i>
             输入城市/景点/游玩主题
         </div>
-        <div :class="$style.headerRight">城市
+        <div :class="$style.headerRight">{{ this.city }}
             <i class="iconfont">&#xe615;</i>
         </div>
     </div>
@@ -15,10 +15,9 @@
 
 <script>
 export default {
-    data () {
-        return {}
-    },
-    components: {}
+    props: {
+        city: String
+    }
 
 }
 
