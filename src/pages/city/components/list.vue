@@ -12,41 +12,15 @@
             <section :class="$style.area">
                 <div :class="$style.title" class="border-topbottom">热门城市</div>
                 <div :class="$style.buttonList">
-                    <div :class="$style.buttonWrapper">
-                        <div :class="$style.button">上海</div>
+                    <div :class="$style.buttonWrapper" v-for="item in hotCities" :key="item.id">
+                        <div :class="$style.button">{{ item.name }}</div>
                     </div>
                 </div>
             </section>
-            <section :class="$style.area">
-                <div :class="$style.title" class="border-topbottom">A</div>
+            <section :class="$style.area" v-for="(item, key) of cities" :key="key">
+                <div :class="$style.title" class="border-topbottom">{{ key }}</div>
                 <ul :class="$style.itemList">
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                </ul>
-            </section>
-            <section :class="$style.area">
-                <div :class="$style.title" class="border-topbottom">A</div>
-                <ul :class="$style.itemList">
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                </ul>
-            </section>
-            <section :class="$style.area">
-                <div :class="$style.title" class="border-topbottom">A</div>
-                <ul :class="$style.itemList">
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                </ul>
-            </section>
-            <section :class="$style.area">
-                <div :class="$style.title" class="border-topbottom">A</div>
-                <ul :class="$style.itemList">
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
-                    <li :class="$style.item" class="border-bottom">阿克苏</li>
+                    <li :class="$style.item" class="border-bottom" v-for="list in item" :key="list.id">{{ list.name }}</li>
                 </ul>
             </section>
         </div>
@@ -56,6 +30,14 @@
 <script>
 import BScroll from 'better-scroll'
 export default {
+    props: {
+        hotCities: {
+            type: Array
+        },
+        cities: {
+            type: Object
+        }
+    },
     data () {
         return {}
     },

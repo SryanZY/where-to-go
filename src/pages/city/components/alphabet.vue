@@ -1,13 +1,16 @@
 <template>
     <ul :class="$style.list">
-        <li :class="$style.item">A</li>
-        <li :class="$style.item">A</li>
-        <li :class="$style.item">A</li>
+        <li :class="$style.item" v-for="(item, key) of cities" :key="key">{{ key }}</li>
     </ul>
 </template>
 
 <script>
 export default {
+    props: {
+        cities: {
+            type: Object
+        }
+    },
     data () {
         return {}
     },
@@ -24,7 +27,7 @@ export default {
         justify-content center
         position absolute
         right 0
-        top -24%
+        top 22%
         bottom 0
         width 40px
         .item
