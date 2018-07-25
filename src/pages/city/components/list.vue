@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </section>
-            <section :class="$style.area" v-for="(item, key) of cities" :key="key">
+            <section :class="$style.area" v-for="(item, key) of cities" :key="key" :ref="key">
                 <div :class="$style.title" class="border-topbottom">{{ key }}</div>
                 <ul :class="$style.itemList">
                     <li :class="$style.item" class="border-bottom" v-for="list in item" :key="list.id">{{ list.name }}</li>
@@ -36,6 +36,9 @@ export default {
         },
         cities: {
             type: Object
+        },
+        letter: {
+            type: String
         }
     },
     data () {
@@ -44,7 +47,14 @@ export default {
     mounted () {
         this.scroll = new BScroll(this.$refs.wrapper)
     },
-    components: {
+    watch: {
+        letter () {
+            if (this.letter) {
+                const ele = this.$refs[this.letter][0]
+                this.scroll.scrollToElement(ele)
+                // this.scroll.scrollToElement的参数必须是一个DOM元素
+            }
+        }
     }
 
 }
