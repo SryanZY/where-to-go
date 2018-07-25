@@ -10,6 +10,7 @@
 
 <script>
 import axios from 'axios'
+import { mapState } from 'vuex'
 import Header from './components/header'
 import Swiper from './components/swiper'
 import Icon from './components/icons'
@@ -22,15 +23,28 @@ export default {
             swiperList: [],
             iconList: [],
             recommendList: [],
-            weekendList: []
+            weekendList: [],
+            lastCity: ''
         }
     },
-    created () {
+    mounted () {
+        this.lastCity = this.city
         this.getHomeInfos()
+    },
+    activated () {
+        // activated钩子当页面重新被显示的时候会被执行
+        // 通常和keep-alive组件配合使用
+        if (this.lastCity !== this.city) {
+            this.lastCity = this.city
+            this.getHomeInfos()
+        }
+    },
+    computed: {
+        ...mapState(['city'])
     },
     methods: {
         getHomeInfos () {
-            axios.get('/api/index.json').then(this.getHomeInfoSuccess)
+            axios.get('/api/index.json?city=' + this.city).then(this.getHomeInfoSuccess)
         },
         getHomeInfoSuccess (res) {
             res = res.data
