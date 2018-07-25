@@ -5,14 +5,14 @@
                 <div :class="$style.title" class="border-topbottom">当前城市</div>
                 <div :class="$style.buttonList">
                     <div :class="$style.buttonWrapper">
-                        <div :class="$style.button">北京</div>
+                        <div :class="$style.button">{{ this.currentCity }}</div>
                     </div>
                 </div>
             </section>
             <section :class="$style.area">
                 <div :class="$style.title" class="border-topbottom">热门城市</div>
                 <div :class="$style.buttonList">
-                    <div :class="$style.buttonWrapper" v-for="item in hotCities" :key="item.id">
+                    <div :class="$style.buttonWrapper" v-for="item in hotCities" :key="item.id" @click="handleCityClick(item.name)">
                         <div :class="$style.button">{{ item.name }}</div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
             <section :class="$style.area" v-for="(item, key) of cities" :key="key" :ref="key">
                 <div :class="$style.title" class="border-topbottom">{{ key }}</div>
                 <ul :class="$style.itemList">
-                    <li :class="$style.item" class="border-bottom" v-for="list in item" :key="list.id">{{ list.name }}</li>
+                    <li :class="$style.item" class="border-bottom" v-for="list in item" :key="list.id" @click="handleCityClick(list.name)">{{ list.name }}</li>
                 </ul>
             </section>
         </div>
@@ -29,6 +29,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapState, mapMutations } from 'vuex'
 export default {
     props: {
         hotCities: {
@@ -44,6 +45,11 @@ export default {
     data () {
         return {}
     },
+    computed: {
+        ...mapState({
+            currentCity: 'city'
+        })
+    },
     mounted () {
         this.scroll = new BScroll(this.$refs.wrapper)
     },
@@ -55,6 +61,15 @@ export default {
                 // this.scroll.scrollToElement的参数必须是一个DOM元素
             }
         }
+    },
+    methods: {
+        handleCityClick (city) {
+            // this.$store.commit('changeCity', city)
+            this.changeCity(city)
+            // 编程式导航
+            this.$router.push('/')
+        },
+        ...mapMutations(['changeCity'])
     }
 
 }
