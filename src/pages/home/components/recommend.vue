@@ -2,7 +2,7 @@
     <section>
         <h3 :class="$style.recommendTitle">猜你喜欢</h3>
         <ul>
-            <li :class="$style.item" class="border-bottom" v-for="item in recommendList" :key="item.id">
+            <router-link tag="li" :to="'/detail/' + item.id" :class="$style.item" class="border-bottom" v-for="item in recommendList" :key="item.id">
                 <div :class="$style.imgWrapper">
                     <img :src="item.url" alt="item.title" :class="$style.itemImg">
                     <div :class="$style.itemTag">随买随用</div>
@@ -12,7 +12,7 @@
                     <p :class="$style.itemDesc">{{ item.desc }}</p>
                     <button :class="$style.itemButton">查看详情</button>
                 </div>
-            </li>
+            </router-link>
         </ul>
     </section>
 </template>
