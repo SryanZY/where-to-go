@@ -16,7 +16,7 @@ import CommonGallery from 'common/gallery/gallery'
 export default {
     data () {
         return {
-            imgs: ['//img1.qunarzz.com/sight/p0/1709/12/12cd82e516121596a3.img.jpg_350x240_d49668b6.jpg', '//img1.qunarzz.com/sight/p0/1709/e4/e48857f2ce5e53a7a3.img.jpg_350x240_8a7694a8.jpg'],
+            imgs: ['//img1.qunarzz.com/sight/p0/1709/bf/bfe91441ab865b2ea3.img.jpg_350x240_02e4672f.jpg', '//img1.qunarzz.com/sight/p0/1709/12/12cd82e516121596a3.img.jpg_350x240_d49668b6.jpg', '//img1.qunarzz.com/sight/p0/1709/e4/e48857f2ce5e53a7a3.img.jpg_350x240_8a7694a8.jpg', '//img1.qunarzz.com/sight/p0/1709/e2/e22fbafaa424a5fa3.img.jpg_350x240_230ee52e.jpg', '//img1.qunarzz.com/sight/p0/1709/20/209869933e4d3c8ba3.img.jpg_350x240_84e57ccb.jpg'],
             showGallery: false
         }
     },
