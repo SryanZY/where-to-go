@@ -1,22 +1,32 @@
 <template>
     <div>
         <div :class="$style.banner" @click="handleBannerClick">
-            <img src="//img1.qunarzz.com/sight/p0/1709/bf/bfe91441ab865b2ea3.img.jpg_600x330_18c9bfb7.jpg" alt="远去的恐龙" :class="$style.bannerImg">
+            <img :src="bannerImg" alt="远去的恐龙" :class="$style.bannerImg">
             <div :class="$style.bannerInfo">
-                <div :class="$style.bannerItem">远去的恐龙</div>
-                <div :class="$style.bannerNum"><i class="iconfont" :class="$style.bannerIcon">&#xe662;</i>39</div>
+                <div :class="$style.bannerItem">{{ this.sightName }}</div>
+                <div :class="$style.bannerNum"><i class="iconfont" :class="$style.bannerIcon">&#xe662;</i>{{ this.gallaryImgs.length }}</div>
             </div>
         </div>
-        <CommonGallery :imgs="imgs" v-show="showGallery" @close="handleGalleryClose"></CommonGallery>
+        <CommonGallery :imgs="gallaryImgs" v-show="showGallery" @close="handleGalleryClose"></CommonGallery>
     </div>
 </template>
 
 <script>
 import CommonGallery from 'common/gallery/gallery'
 export default {
+    props: {
+        sightName: {
+            type: String
+        },
+        bannerImg: {
+            type: String
+        },
+        gallaryImgs: {
+            type: Array
+        }
+    },
     data () {
         return {
-            imgs: ['//img1.qunarzz.com/sight/p0/1709/bf/bfe91441ab865b2ea3.img.jpg_350x240_02e4672f.jpg', '//img1.qunarzz.com/sight/p0/1709/12/12cd82e516121596a3.img.jpg_350x240_d49668b6.jpg', '//img1.qunarzz.com/sight/p0/1709/e4/e48857f2ce5e53a7a3.img.jpg_350x240_8a7694a8.jpg', '//img1.qunarzz.com/sight/p0/1709/e2/e22fbafaa424a5fa3.img.jpg_350x240_230ee52e.jpg', '//img1.qunarzz.com/sight/p0/1709/20/209869933e4d3c8ba3.img.jpg_350x240_84e57ccb.jpg'],
             showGallery: false
         }
     },
