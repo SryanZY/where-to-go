@@ -23,6 +23,10 @@ export default {
     activated () {
         window.addEventListener('scroll', this.handleScroll)
     },
+    deactivated () {
+        // 页面即将被隐藏或者即将被替换的时候执行
+        window.removeEventListener('scroll', this.handleScroll)
+    },
     methods: {
         handleScroll () {
             const scrollTop = document.documentElement.scrollTop
