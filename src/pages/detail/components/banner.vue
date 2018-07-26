@@ -7,12 +7,15 @@
                 <div :class="$style.bannerNum"><i class="iconfont" :class="$style.bannerIcon">&#xe662;</i>{{ this.gallaryImgs.length }}</div>
             </div>
         </div>
-        <CommonGallery :imgs="gallaryImgs" v-show="showGallery" @close="handleGalleryClose"></CommonGallery>
+        <Fade>
+            <CommonGallery :imgs="gallaryImgs" v-show="showGallery" @close="handleGalleryClose"></CommonGallery>
+        </Fade>
     </div>
 </template>
 
 <script>
 import CommonGallery from 'common/gallery/gallery'
+import Fade from 'common/fade/fade'
 export default {
     props: {
         sightName: {
@@ -31,7 +34,8 @@ export default {
         }
     },
     components: {
-        CommonGallery
+        CommonGallery,
+        Fade
     },
     methods: {
         handleBannerClick () {
