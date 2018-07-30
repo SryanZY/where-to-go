@@ -20,10 +20,10 @@ export default {
             }
         }
     },
-    activated () {
+    mounted () {
         window.addEventListener('scroll', this.handleScroll)
     },
-    deactivated () {
+    unmounted () {
         // 页面即将被隐藏或者即将被替换的时候执行
         window.removeEventListener('scroll', this.handleScroll)
     },
